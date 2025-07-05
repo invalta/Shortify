@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shortify - Crea Shorts con IA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 Shortify.ai</h1>
+    <p>Convierte videos en shorts virales con solo un clic</p>
+
+    <form id="shortForm">
+      <input type="url" id="videoUrl" placeholder="Pega el enlace del video" required />
+      <input type="text" id="videoTitle" placeholder="Título para el Short" />
+      <select id="music">
+        <option value="">Elige música de fondo (opcional)</option>
+        <option value="energetic">🎵 Energética</option>
+        <option value="lofi">🎧 Lo-Fi</option>
+        <option value="dramatic">🎻 Dramática</option>
+      </select>
+      <button type="submit">Generar Short</button>
+    </form>
+
+    <div id="result" style="display:none;">
+      <h3>¡Tu Short está listo!</h3>
+      <video controls width="100%">
+        <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
