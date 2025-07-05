@@ -3,33 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shortify - Crea Shorts con IA</title>
+  <title>Shortify.ai - Shorts con Inteligencia Artificial</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>🎬 Shortify.ai</h1>
-    <p>Convierte videos en shorts virales con solo un clic</p>
+  <header>
+    <div class="logo">🎬 Shortify.ai</div>
+  </header>
 
-    <form id="shortForm">
+  <main>
+    <section class="intro">
+      <h1>Convierte tus videos en shorts virales</h1>
+      <p>Genera clips automáticos con títulos, música y cortes profesionales en segundos.</p>
+    </section>
+
+    <form id="shortForm" class="form-box">
       <input type="url" id="videoUrl" placeholder="Pega el enlace del video" required />
-      <input type="text" id="videoTitle" placeholder="Título para el Short" />
+      <input type="text" id="videoTitle" placeholder="Título del short" />
       <select id="music">
-        <option value="">Elige música de fondo (opcional)</option>
-        <option value="energetic">🎵 Energética</option>
-        <option value="lofi">🎧 Lo-Fi</option>
-        <option value="dramatic">🎻 Dramática</option>
+        <option value="">🎵 Música de fondo (opcional)</option>
+        <option value="energetic">Energética</option>
+        <option value="lofi">Lo-Fi</option>
+        <option value="dramatic">Dramática</option>
       </select>
-      <button type="submit">Generar Short</button>
+      <button type="submit">✨ Generar Short</button>
     </form>
 
-    <div id="result" style="display:none;">
-      <h3>¡Tu Short está listo!</h3>
+    <section id="result" class="result-box" style="display:none;">
+      <h2>¡Tu Short está listo!</h2>
       <video controls width="100%">
         <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
       </video>
-    </div>
-  </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Shortify.ai · Todos los derechos reservados</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
