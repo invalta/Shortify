@@ -8,54 +8,74 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header class="fade-in">
+  <header>
     <div class="logo">✨ Shortify.ai</div>
   </header>
 
   <main>
-    <section class="intro fade-in">
+    <section class="intro">
       <h1>Convierte videos en shorts virales</h1>
       <p>Genera clips con IA, subtítulos, música y más en segundos.</p>
     </section>
 
-    <form id="shortForm" class="form-box fade-in">
-      <input type="url" id="videoUrl" placeholder="Pega enlace del video" required />
-      <input type="text" id="videoTitle" placeholder="Título del short" />
+    <form id="shortForm" class="form-box">
+      <label for="videoUrl">🎥 Pega el enlace del video</label>
+      <input type="url" id="videoUrl" placeholder="https://..." required />
+
+      <label for="videoTitle">📝 Título llamativo para el short</label>
+      <input type="text" id="videoTitle" placeholder="Ej: ¡Lo que nadie te cuenta!" />
+
+      <label for="music">🎵 Elige estilo de música viral</label>
       <select id="music">
-        <option value="">🎵 Música de fondo</option>
-        <option value="energetic">Energética</option>
-        <option value="lofi">Lo-Fi</option>
-        <option value="dramatic">Dramática</option>
+        <option value="">Selecciona una opción</option>
+        <option value="energetic">💥 Energética</option>
+        <option value="lofi">🎧 Lo-Fi chill</option>
+        <option value="dramatic">🎻 Dramática</option>
+        <option value="epic">🔥 Épica cinematográfica</option>
+        <option value="funny">😂 Cómica / Rápida</option>
+        <option value="sad">😢 Emotiva / Triste</option>
       </select>
+
       <button type="submit">⚡ Generar Short</button>
     </form>
 
-    <section class="examples fade-in">
-      <h2>🌟 Ejemplos virales creados</h2>
-      <div class="video-grid">
-        <div class="video-card"><video src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" controls></video></div>
-        <div class="video-card"><video src="https://samplelib.com/lib/preview/mp4/sample-10s.mp4" controls></video></div>
-        <div class="video-card"><video src="https://samplelib.com/lib/preview/mp4/sample-15s.mp4" controls></video></div>
+    <section class="examples">
+      <h2>🔥 Ejemplos virales generados</h2>
+
+      <div class="video-section">
+        <p class="hook">🎯 GANCHO: Doble pantalla con voz sobre — CTR x2</p>
+        <video src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" controls></video>
+      </div>
+
+      <div class="video-section">
+        <p class="hook">📈 FORMATO: Texto grande + zoom en cara = más retención</p>
+        <video src="https://samplelib.com/lib/preview/mp4/sample-10s.mp4" controls></video>
+      </div>
+
+      <div class="video-section">
+        <p class="hook">💡 TÉCNICA: Música dramática + pausa = viralidad</p>
+        <video src="https://samplelib.com/lib/preview/mp4/sample-15s.mp4" controls></video>
       </div>
     </section>
   </main>
 
-  <footer class="fade-in">
+  <footer>
     <p>© 2025 Shortify.ai · Todos los derechos reservados</p>
   </footer>
 
   <script>
-    document.querySelectorAll('.fade-in').forEach(el => {
-      el.style.opacity = 0;
-      el.style.transform = 'translateY(30px)';
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          el.style.transition = 'all 0.6s ease';
-          el.style.opacity = 1;
-          el.style.transform = 'translateY(0)';
-        }, 300);
+    const elements = document.querySelectorAll('.video-section, .form-box, .intro, header, footer');
+    const appear = () => {
+      elements.forEach(el => {
+        const pos = el.getBoundingClientRect().top;
+        const winHeight = window.innerHeight;
+        if (pos < winHeight - 50) {
+          el.classList.add('show');
+        }
       });
-    });
+    };
+    window.addEventListener('scroll', appear);
+    window.addEventListener('load', appear);
   </script>
 </body>
 </html>
