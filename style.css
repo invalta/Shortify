@@ -1,80 +1,75 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #f0f4ff, #e4f0ff);
+  background: #fffdf2;
   color: #333;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 header {
-  background: #0b1f55;
-  color: white;
+  background-color: #ffbe0b;
+  color: black;
   padding: 20px;
   text-align: center;
   font-size: 24px;
   font-weight: bold;
 }
 main {
-  flex: 1;
-  padding: 40px 20px;
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
+  padding: 40px 20px;
 }
 .intro {
   text-align: center;
   margin-bottom: 30px;
 }
 .intro h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 32px;
 }
 .intro p {
-  font-size: 16px;
+  font-size: 18px;
   color: #555;
 }
 .form-box {
-  background: white;
-  border-radius: 8px;
+  background: #fff8e1;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 input, select, button {
-  padding: 12px;
+  padding: 14px;
   font-size: 16px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 button {
-  background-color: #0070f3;
-  color: white;
+  background: #ffd700;
   border: none;
+  color: black;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 button:hover {
-  background-color: #0057c2;
+  background: #ffcc00;
 }
-.result-box {
-  margin-top: 30px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
+.examples {
+  margin-top: 50px;
+}
+.video-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.video-card video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
 footer {
-  background: #0b1f55;
-  color: white;
+  background: #ffbe0b;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   font-size: 14px;
 }

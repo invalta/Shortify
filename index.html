@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shortify.ai - Shorts con Inteligencia Artificial</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shortify.ai - Shorts con IA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <div class="logo">🎬 Shortify.ai</div>
+  <header class="fade-in">
+    <div class="logo">✨ Shortify.ai</div>
   </header>
 
   <main>
-    <section class="intro">
-      <h1>Convierte tus videos en shorts virales</h1>
-      <p>Genera clips automáticos con títulos, música y cortes profesionales en segundos.</p>
+    <section class="intro fade-in">
+      <h1>Convierte videos en shorts virales</h1>
+      <p>Genera clips con IA, subtítulos, música y más en segundos.</p>
     </section>
 
-    <form id="shortForm" class="form-box">
-      <input type="url" id="videoUrl" placeholder="Pega el enlace del video" required />
+    <form id="shortForm" class="form-box fade-in">
+      <input type="url" id="videoUrl" placeholder="Pega enlace del video" required />
       <input type="text" id="videoTitle" placeholder="Título del short" />
       <select id="music">
-        <option value="">🎵 Música de fondo (opcional)</option>
+        <option value="">🎵 Música de fondo</option>
         <option value="energetic">Energética</option>
         <option value="lofi">Lo-Fi</option>
         <option value="dramatic">Dramática</option>
       </select>
-      <button type="submit">✨ Generar Short</button>
+      <button type="submit">⚡ Generar Short</button>
     </form>
 
-    <section id="result" class="result-box" style="display:none;">
-      <h2>¡Tu Short está listo!</h2>
-      <video controls width="100%">
-        <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
-      </video>
+    <section class="examples fade-in">
+      <h2>🌟 Ejemplos virales creados</h2>
+      <div class="video-grid">
+        <div class="video-card"><video src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" controls></video></div>
+        <div class="video-card"><video src="https://samplelib.com/lib/preview/mp4/sample-10s.mp4" controls></video></div>
+        <div class="video-card"><video src="https://samplelib.com/lib/preview/mp4/sample-15s.mp4" controls></video></div>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="fade-in">
     <p>© 2025 Shortify.ai · Todos los derechos reservados</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(30px)';
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          el.style.transition = 'all 0.6s ease';
+          el.style.opacity = 1;
+          el.style.transform = 'translateY(0)';
+        }, 300);
+      });
+    });
+  </script>
 </body>
 </html>
