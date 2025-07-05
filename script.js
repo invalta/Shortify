@@ -12,3 +12,8 @@ document.querySelectorAll('.use-template').forEach((btn, i) => {
     alert('Plantilla aplicada: puedes pegar tu video ahora.');
   });
 });
+
+document.getElementById('proToggle').addEventListener('click', () => {
+  const plans = document.getElementById('proPlans');
+  plans.style.display = plans.style.display === 'none' ? 'block' : 'none';
+});

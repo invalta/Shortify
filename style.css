@@ -70,6 +70,15 @@ button:hover {
   box-shadow: 0 0 10px #00FF7F44;
 }
 
+.video-section video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
 .hook {
   color: #00FF7F;
   font-weight: bold;
@@ -102,13 +111,38 @@ footer {
   margin-top: 60px;
 }
 
-/* Animaciones de entrada tipo Offlesson */
 .fade-in-scroll {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease-out;
 }
+
 .fade-in-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.pro-section {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px #00FF7F44;
+  margin-top: 50px;
+}
+
+.pro-section h2 {
+  color: #00FF7F;
+  margin-bottom: 15px;
+}
+
+.pro-section ul {
+  list-style: none;
+  padding: 0;
+  color: white;
+}
+
+.pro-section ul li {
+  margin: 10px 0;
+  font-size: 16px;
 }
