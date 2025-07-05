@@ -9,16 +9,16 @@
 </head>
 <body>
   <header>
-    <div class="logo">✨ Shortify.ai</div>
+    <h1 class="logo">✨ Shortify.ai</h1>
   </header>
 
   <main>
-    <section class="intro">
+    <section class="intro fade-in-scroll">
       <h1>Convierte videos en shorts virales</h1>
       <p>Genera clips con IA, subtítulos, música y más en segundos.</p>
     </section>
 
-    <form id="shortForm" class="form-box">
+    <form id="shortForm" class="form-box fade-in-scroll">
       <label for="videoUrl">🎥 Pega el enlace del video</label>
       <input type="url" id="videoUrl" placeholder="https://..." required />
 
@@ -38,47 +38,44 @@
 
       <button type="submit">⚡ Generar Short</button>
     </form>
-<section class="examples">
-  <h2>🔥 Ejemplos virales con técnicas probadas</h2>
 
-  <div class="video-section">
-    <p class="hook">🗣️ Voz IA + subtítulos grandes = + Retención</p>
-    <video src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" controls></video>
-    <button class="use-template">Usar esta plantilla</button>
-  </div>
+    <section class="examples fade-in-scroll">
+      <h2>🔥 Ejemplos virales con técnicas probadas</h2>
 
-  <div class="video-section">
-    <p class="hook">📱 Pantalla dividida: “cara + reacción”</p>
-    <video src="https://samplelib.com/lib/preview/mp4/sample-10s.mp4" controls></video>
-    <button class="use-template">Usar esta plantilla</button>
-  </div>
+      <div class="video-section">
+        <p class="hook">🗣️ Voz IA + subtítulos grandes = + Retención</p>
+        <video src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" controls></video>
+        <button class="use-template">Usar esta plantilla</button>
+      </div>
 
-  <div class="video-section">
-    <p class="hook">🎵 Zoom rápido + música energética</p>
-    <video src="https://samplelib.com/lib/preview/mp4/sample-15s.mp4" controls></video>
-    <button class="use-template">Usar esta plantilla</button>
-  </div>
-</section>
+      <div class="video-section">
+        <p class="hook">📱 Pantalla dividida: “cara + reacción”</p>
+        <video src="https://samplelib.com/lib/preview/mp4/sample-10s.mp4" controls></video>
+        <button class="use-template">Usar esta plantilla</button>
+      </div>
 
+      <div class="video-section">
+        <p class="hook">🎵 Zoom rápido + música energética</p>
+        <video src="https://samplelib.com/lib/preview/mp4/sample-15s.mp4" controls></video>
+        <button class="use-template">Usar esta plantilla</button>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 Shortify.ai · Todos los derechos reservados</p>
   </footer>
 
+  <script src="script.js"></script>
   <script>
-    const elements = document.querySelectorAll('.video-section, .form-box, .intro, header, footer');
-    const appear = () => {
-      elements.forEach(el => {
-        const pos = el.getBoundingClientRect().top;
-        const winHeight = window.innerHeight;
-        if (pos < winHeight - 50) {
-          el.classList.add('show');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
       });
-    };
-    window.addEventListener('scroll', appear);
-    window.addEventListener('load', appear);
+    });
+    document.querySelectorAll('.fade-in-scroll').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

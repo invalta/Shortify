@@ -1,9 +1,14 @@
-document.getElementById('shortForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const videoUrl = document.getElementById('videoUrl').value;
-  const title = document.getElementById('videoTitle').value;
-  const music = document.getElementById('music').value;
-
-  document.getElementById('result').style.display = 'block';
-  alert("Short generado (simulación). Próximamente con IA real.");
+document.querySelectorAll('.use-template').forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    const hooks = [
+      'Voz IA + subtítulos grandes',
+      'Pantalla dividida: cara y reacción',
+      'Zoom rápido + música energética'
+    ];
+    const musics = ['dramatic', 'energetic', 'epic'];
+    document.getElementById('videoTitle').value = hooks[i];
+    document.getElementById('music').value = musics[i];
+    document.getElementById('videoUrl').focus();
+    alert('Plantilla aplicada: puedes pegar tu video ahora.');
+  });
 });
